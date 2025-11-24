@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website showcasing my software engineering projects, achievements, and professional experience. Built with React, TypeScript, and Tailwind CSS, featuring a stunning space-themed animated background.
 
-![Portfolio Preview](public/assets/preview.png)
+
 
 ## 🌟 Features
 
