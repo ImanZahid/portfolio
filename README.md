@@ -286,5 +286,3 @@ Give a ⭐️ if you like this project!
 - [Vite](https://vitejs.dev/) - Build tool
 
 ---
-
-Made with ❤️ by Iman Zahid
