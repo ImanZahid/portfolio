@@ -4,11 +4,11 @@ export default function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
       {/* Clean gradient base */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
 
       {/* Subtle dot grid pattern */}
       <div
-        className="absolute inset-0 opacity-30 dark:opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage: `radial-gradient(circle, rgba(100, 116, 139, 0.15) 1px, transparent 1px)`,
           backgroundSize: "30px 30px",
@@ -54,7 +54,7 @@ export default function AnimatedBackground() {
 
       {/* Minimal geometric accent lines */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-10 dark:opacity-5"
+        className="absolute inset-0 w-full h-full opacity-10"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -120,7 +120,7 @@ export default function AnimatedBackground() {
       {Array.from({ length: 8 }, (_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-blue-400/20 dark:bg-blue-400/10 rounded-full"
+          className="absolute w-1 h-1 bg-blue-400/20 rounded-full"
           style={{
             left: `${10 + i * 12}%`,
             top: `${15 + (i % 3) * 30}%`,
