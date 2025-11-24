@@ -18,19 +18,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="max-w-4xl w-full">
+    <div className="min-h-screen flex items-center justify-center px-4 py-16">
+      <div className="max-w-3xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center space-y-6"
+          className="text-center space-y-4"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight"
+            className="text-4xl md:text-6xl font-bold tracking-tight"
           >
             Iman Zahid
           </motion.h1>
@@ -39,16 +39,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-muted-foreground"
+            className="text-lg md:text-xl text-muted-foreground"
           >
-            Junior Software Engineer
+            Software Engineer
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base text-muted-foreground max-w-2xl mx-auto pt-2"
           >
             Building scalable, secure, and performant web applications with
             modern technologies. Specialized in React ecosystems, state
@@ -59,12 +59,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex justify-center gap-4 pt-4"
+            className="flex justify-center gap-3 pt-6"
           >
             <Button size="lg" asChild>
               <a href="/resume">View Resume</a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="secondary" asChild>
               <a href="/projects">Explore Projects</a>
             </Button>
           </motion.div>
@@ -73,7 +73,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex justify-center gap-4 pt-8"
+            className="flex justify-center gap-2 pt-6"
           >
             <Button variant="ghost" size="icon" asChild>
               <a
@@ -106,9 +106,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="pt-12"
+            className="pt-8"
           >
-            <p className="text-sm text-muted-foreground mb-4">Tech Stack</p>
+            <p className="text-xs text-muted-foreground mb-3">Tech Stack</p>
             <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
               {techStack.map((tech, index) => (
                 <motion.div

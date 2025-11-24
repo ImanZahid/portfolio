@@ -1,30 +1,54 @@
-import { motion } from 'framer-motion';
-import { Download, Briefcase, GraduationCap, Award } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import resumePdf from '@/assets/ImanZahidCV.pdf';
+import { motion } from "framer-motion";
+import { Download, Briefcase, GraduationCap, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+
+const resumePdf = "/assets/ImanZahidCV.pdf";
 
 export default function Resume() {
   const experience = [
     {
-      company: 'ARKSOFT',
-      position: 'Junior Software Engineer',
-      period: '2021 - Present',
-      description: 'Leading development of scalable web applications using React, Next.js, and Node.js. Mentoring junior developers and establishing best practices.',
+      company: "ARKSOFT",
+      position: "Software Engineer",
+      period: "2021 - Present",
+      description:
+        "Leading development of scalable web applications using React, Next.js, and Node.js. Mentoring developers and establishing best practices.",
     },
     {
-      company: 'INOVAKO',
-      position: 'Software Engineer',
-      period: '2019 - 2021',
-      description: 'Developed enterprise applications with Angular and React. Implemented secure routing patterns and state management solutions.',
+      company: "INOVAKO",
+      position: "Software Engineer",
+      period: "2019 - 2021",
+      description:
+        "Developed enterprise applications with Angular and React. Implemented secure routing patterns and state management solutions.",
     },
   ];
 
   const skills = {
-    'Frontend': ['React', 'Next.js', 'TypeScript', 'Angular', 'Tailwind CSS', 'Zustand', 'React Query'],
-    'Backend': ['Node.js', 'Express', 'NestJS', 'PostgreSQL', 'MongoDB', 'Redis'],
-    'Tools & Practices': ['Git', 'Docker', 'CI/CD', 'Agile/Scrum', 'TDD', 'Code Review'],
+    Frontend: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Angular",
+      "Tailwind CSS",
+      "Zustand",
+      "React Query",
+    ],
+    Backend: ["Node.js", "Express", "NestJS", "PostgreSQL", "MongoDB", "Redis"],
+    "Tools & Practices": [
+      "Git",
+      "Docker",
+      "CI/CD",
+      "Agile/Scrum",
+      "TDD",
+      "Code Review",
+    ],
   };
 
   return (
@@ -38,7 +62,8 @@ export default function Resume() {
           <div>
             <h1 className="text-4xl font-bold mb-4">Resume</h1>
             <p className="text-muted-foreground">
-              Junior Software Engineer specializing in React ecosystems and scalable architectures
+              Software Engineer specializing in React ecosystems and scalable
+              architectures
             </p>
           </div>
           <Button asChild>
@@ -61,7 +86,9 @@ export default function Resume() {
             <CardContent>
               <div>
                 <h3 className="font-semibold">Bilkent University</h3>
-                <p className="text-sm text-muted-foreground">Bachelor of Science in Computer Science</p>
+                <p className="text-sm text-muted-foreground">
+                  Bachelor of Science in Computer Science
+                </p>
                 <p className="text-sm text-muted-foreground">Ankara, Turkey</p>
               </div>
             </CardContent>
@@ -83,9 +110,13 @@ export default function Resume() {
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <h3 className="font-semibold">{job.position}</h3>
-                        <p className="text-sm text-muted-foreground">{job.company}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {job.company}
+                        </p>
                       </div>
-                      <p className="text-sm text-muted-foreground">{job.period}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {job.period}
+                      </p>
                     </div>
                     <p className="text-sm">{job.description}</p>
                   </div>
@@ -106,7 +137,9 @@ export default function Resume() {
               {Object.entries(skills).map(([category, techs]) => (
                 <div key={category}>
                   <h3 className="font-semibold mb-2">{category}</h3>
-                  <p className="text-sm text-muted-foreground">{techs.join(' • ')}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {techs.join(" • ")}
+                  </p>
                 </div>
               ))}
             </CardContent>

@@ -52,11 +52,11 @@ export default function About() {
             </CardHeader>
             <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
               <p>
-                I'm a Junior Software Engineer with a passion for building
-                modern, performant web applications. With a Computer Science
-                degree from Bilkent University, I've honed my skills in creating
-                scalable architectures and leading development teams at
-                companies like ARKSOFT and INOVAKO.
+                I'm a Software Engineer with a passion for building modern,
+                performant web applications. With a Computer Science degree from
+                Bilkent University, I've honed my skills in creating scalable
+                architectures and leading development teams at companies like
+                ARKSOFT and INOVAKO.
               </p>
               <p>
                 My expertise spans the full React ecosystem, including Next.js,
