@@ -112,6 +112,55 @@ body {
   h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 80px;
   }
+
+  /* Prose styling for blog posts */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose p {
+    @apply mb-6 leading-7;
+  }
+
+  .prose .lead {
+    @apply text-xl text-muted-foreground mb-8 leading-8;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold mt-10 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-8 mb-3;
+  }
+
+  .prose ul {
+    @apply list-disc pl-6 mb-6 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6 mb-6 space-y-2;
+  }
+
+  .prose li {
+    @apply leading-7;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary underline underline-offset-4 hover:text-primary/80 transition-colors;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 italic my-6 text-muted-foreground;
+  }
+
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
 }
 
 @theme inline {

@@ -29,7 +29,7 @@ export default function Blog() {
       category: "award",
       excerpt:
         'Our senior project "SignifyPlus" has been awarded the Innovation Award from the Department of Information Systems and Technologies at Bilkent University.',
-      image: "/blog/BilkentFYP1.png",
+      image: "/assets/BilkentFYP2.png",
       tags: ["ASL", "Machine Learning", "Mobile App", "Innovation"],
     },
     {
@@ -39,7 +39,7 @@ export default function Blog() {
       category: "award",
       excerpt:
         'Received the "Best Intern Award" from Bilkent University\'s Department of Information Systems and Technologies during my internship at ARKSOFT.',
-      image: "/blog/ArksoftBilkent.png",
+      image: "/assets/ArksoftBilkent.png",
       tags: ["Internship", "ARKSOFT", "Achievement"],
     },
     {
@@ -49,7 +49,7 @@ export default function Blog() {
       category: "award",
       excerpt:
         "A collection of awards and recognitions received during my academic journey at Bilkent University.",
-      image: "/blog/BilkentAwards.png",
+      image: "/assets/BilkentAwards.png",
       tags: ["Awards", "Academia", "Recognition"],
     },
   ];
