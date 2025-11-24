@@ -281,3 +281,47 @@ body {
 [data-theme="dark"] .animate-blob {
   opacity: 0.15;
 }
+
+/* Blog post prose styling overrides for dark theme */
+.prose-invert {
+  --tw-prose-body: rgb(209, 213, 219);
+  --tw-prose-headings: rgb(255, 255, 255);
+  --tw-prose-lead: rgb(209, 213, 219);
+  --tw-prose-links: rgb(196, 181, 253);
+  --tw-prose-bold: rgb(255, 255, 255);
+  --tw-prose-counters: rgb(156, 163, 175);
+  --tw-prose-bullets: rgb(156, 163, 175);
+  --tw-prose-hr: rgb(75, 85, 99);
+  --tw-prose-quotes: rgb(229, 231, 235);
+  --tw-prose-quote-borders: rgb(107, 114, 128);
+  --tw-prose-captions: rgb(156, 163, 175);
+  --tw-prose-code: rgb(229, 231, 235);
+  --tw-prose-pre-code: rgb(229, 231, 235);
+  --tw-prose-pre-bg: rgb(31, 41, 55);
+  --tw-prose-th-borders: rgb(75, 85, 99);
+  --tw-prose-td-borders: rgb(55, 65, 81);
+}
+
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4 {
+  color: rgb(255, 255, 255) !important;
+}
+
+.prose-invert p,
+.prose-invert li {
+  color: rgb(209, 213, 219) !important;
+}
+
+.prose-invert strong {
+  color: rgb(255, 255, 255) !important;
+}
+
+.prose-invert blockquote {
+  color: rgb(229, 231, 235) !important;
+  border-left-color: rgb(147, 51, 234) !important;
+}
+
+.prose-invert .lead {
+  color: rgb(209, 213, 219) !important;
+}

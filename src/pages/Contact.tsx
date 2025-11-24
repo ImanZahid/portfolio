@@ -49,8 +49,8 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
       >
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 text-white">Get In Touch</h1>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
@@ -66,15 +66,15 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
               >
-                <Card className="h-full hover:shadow-lg transition-shadow">
+                <Card className="h-full bg-slate-900/50 border-slate-700 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all backdrop-blur">
                   <CardHeader>
-                    <Icon className="h-8 w-8 mb-2 text-primary" />
-                    <CardTitle>{method.label}</CardTitle>
-                    <CardDescription>{method.description}</CardDescription>
+                    <Icon className="h-8 w-8 mb-2 text-purple-400" />
+                    <CardTitle className="text-white">{method.label}</CardTitle>
+                    <CardDescription className="text-gray-400">{method.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     {method.href ? (
-                      <Button variant="link" className="p-0 h-auto" asChild>
+                      <Button variant="link" className="p-0 h-auto text-purple-300 hover:text-purple-200" asChild>
                         <a
                           href={method.href}
                           target={
@@ -92,7 +92,7 @@ export default function Contact() {
                         </a>
                       </Button>
                     ) : (
-                      <p className="text-sm">{method.value}</p>
+                      <p className="text-sm text-gray-300">{method.value}</p>
                     )}
                   </CardContent>
                 </Card>
@@ -106,10 +106,10 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle>Let's Work Together</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-white">Let's Work Together</CardTitle>
+              <CardDescription className="text-gray-400">
                 Whether you have a project in mind or just want to chat about
                 technology, feel free to reach out through any of the channels
                 above.
@@ -117,10 +117,10 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-gray-400">
                   I'm particularly interested in:
                 </p>
-                <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground">
+                <ul className="list-disc list-inside space-y-2 text-sm text-gray-300">
                   <li>Full-stack React/Next.js projects</li>
                   <li>State management architecture consulting</li>
                   <li>Code review and mentoring opportunities</li>

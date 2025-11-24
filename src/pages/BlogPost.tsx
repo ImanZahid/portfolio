@@ -47,7 +47,7 @@ export default function BlogPost() {
         },
       ],
       content: (
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
+        <div className="prose prose-neutral prose-invert max-w-none">
           <h2>About SignifyPlus</h2>
           <p>
             SignifyPlus bridges the communication gap between signers and
@@ -120,7 +120,7 @@ export default function BlogPost() {
       images: ["/assets/ArksoftBilkent.png"],
       tags: ["Internship", "ARKSOFT", "Achievement", "React", "Full Stack"],
       content: (
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
+        <div className="prose prose-neutral prose-invert max-w-none">
           <p className="lead">
             The "Best Intern Award", organized by the Department of Information
             Systems and Technologies at Bilkent University, has been awarded to
@@ -182,7 +182,7 @@ export default function BlogPost() {
       images: ["/assets/BilkentAwards.png"],
       tags: ["Awards", "Academia", "Recognition", "Computer Science"],
       content: (
-        <div className="prose prose-neutral dark:prose-invert max-w-none">
+        <div className="prose prose-neutral prose-invert max-w-none">
           <p className="lead">
             Throughout my academic journey at Bilkent University's Department of
             Information Systems and Technologies, I've been fortunate to receive
@@ -233,7 +233,7 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+        <h1 className="text-4xl font-bold mb-4 text-white">Post Not Found</h1>
         <Link to="/blog">
           <Button>
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -252,7 +252,7 @@ export default function BlogPost() {
         transition={{ duration: 0.5 }}
       >
         <Link to="/blog">
-          <Button variant="ghost" className="mb-6">
+          <Button variant="ghost" className="mb-6 text-gray-300 hover:text-white hover:bg-purple-500/10">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
           </Button>
@@ -260,11 +260,11 @@ export default function BlogPost() {
 
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <Badge variant="outline">
+            <Badge variant="outline" className="bg-yellow-500/10 text-yellow-400 border-yellow-500/30">
               <Award className="h-3 w-3 mr-1" />
               {post.category}
             </Badge>
-            <span className="text-sm text-muted-foreground flex items-center gap-1">
+            <span className="text-sm text-gray-400 flex items-center gap-1">
               <Calendar className="h-3 w-3" />
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
@@ -274,11 +274,11 @@ export default function BlogPost() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">{post.title}</h1>
 
           <div className="flex flex-wrap gap-2 mb-8">
             {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+              <Badge key={tag} variant="secondary" className="bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20 hover:text-purple-200 transition-colors">
                 {tag}
               </Badge>
             ))}
@@ -330,15 +330,15 @@ export default function BlogPost() {
 
         {/* Links */}
         {post.links && post.links.length > 0 && (
-          <Card className="bg-muted/50">
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardContent className="pt-6">
-              <h3 className="font-semibold mb-4">Related Links</h3>
+              <h3 className="font-semibold mb-4 text-white">Related Links</h3>
               <div className="space-y-2">
                 {post.links.map((link, index) => (
                   <Button
                     key={index}
                     variant="outline"
-                    className="w-full justify-between"
+                    className="w-full justify-between bg-purple-500/10 border-purple-500/30 text-purple-300 hover:bg-purple-500/20 hover:text-purple-200"
                     asChild
                   >
                     <a

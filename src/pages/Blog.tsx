@@ -84,8 +84,8 @@ export default function Blog() {
         transition={{ duration: 0.5 }}
       >
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">Blog & Achievements</h1>
-          <p className="text-muted-foreground text-lg">
+          <h1 className="text-4xl font-bold mb-4 text-white">Blog & Achievements</h1>
+          <p className="text-gray-300 text-lg">
             Sharing my journey, projects, and milestones in software
             engineering.
           </p>
@@ -100,8 +100,8 @@ export default function Blog() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link to={`/blog/${post.id}`}>
-                <Card className="h-full hover:shadow-lg transition-all group cursor-pointer overflow-hidden">
-                  <div className="aspect-video overflow-hidden bg-muted">
+                <Card className="h-full bg-slate-900/50 border-slate-700 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all group cursor-pointer overflow-hidden backdrop-blur">
+                  <div className="aspect-video overflow-hidden bg-slate-800">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -119,7 +119,7 @@ export default function Blog() {
                           {post.category}
                         </span>
                       </Badge>
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-xs text-gray-400">
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
@@ -127,10 +127,10 @@ export default function Blog() {
                         })}
                       </span>
                     </div>
-                    <CardTitle className="group-hover:text-primary transition-colors">
+                    <CardTitle className="text-white group-hover:text-purple-400 transition-colors">
                       {post.title}
                     </CardTitle>
-                    <CardDescription>{post.excerpt}</CardDescription>
+                    <CardDescription className="text-gray-400">{post.excerpt}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-1">
@@ -138,7 +138,7 @@ export default function Blog() {
                         <Badge
                           key={tag}
                           variant="secondary"
-                          className="text-xs"
+                          className="text-xs bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20 hover:text-purple-200 transition-colors"
                         >
                           {tag}
                         </Badge>

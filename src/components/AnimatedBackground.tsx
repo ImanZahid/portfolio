@@ -3,174 +3,204 @@ import { motion } from "framer-motion";
 export default function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
-      {/* Clean gradient base */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+      {/* Dark space background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
 
-      {/* Subtle dot grid pattern */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(100, 116, 139, 0.15) 1px, transparent 1px)`,
-          backgroundSize: "30px 30px",
-        }}
-      />
-
-      {/* Animated gradient orbs - minimal and elegant */}
-      <motion.div
-        className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.3, 0.2],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(147, 51, 234, 0.25) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Minimal geometric accent lines */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-10"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="rgb(147, 51, 234)" stopOpacity="0.5" />
-          </linearGradient>
-        </defs>
-
-        {/* Elegant diagonal lines */}
-        <motion.line
-          x1="0"
-          y1="20%"
-          x2="100%"
-          y2="20%"
-          stroke="url(#line-grad)"
-          strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: [0, 1, 0] }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        <motion.line
-          x1="0"
-          y1="50%"
-          x2="100%"
-          y2="50%"
-          stroke="url(#line-grad)"
-          strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: [0, 1, 0] }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-        />
-
-        <motion.line
-          x1="0"
-          y1="80%"
-          x2="100%"
-          y2="80%"
-          stroke="url(#line-grad)"
-          strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: [0, 1, 0] }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
-        />
-      </svg>
-
-      {/* Subtle floating particles - very minimal */}
-      {Array.from({ length: 8 }, (_, i) => (
+      {/* Distant golden stars (far away glowing dots) */}
+      {Array.from({ length: 100 }, (_, i) => (
         <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-blue-400/20 rounded-full"
+          key={`distant-star-${i}`}
+          className="absolute rounded-full"
           style={{
-            left: `${10 + i * 12}%`,
-            top: `${15 + (i % 3) * 30}%`,
+            width: `${1 + Math.random() * 2}px`,
+            height: `${1 + Math.random() * 2}px`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            background: "radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 223, 0, 0.4) 50%, transparent 100%)",
+            boxShadow: `0 0 ${2 + Math.random() * 4}px rgba(255, 215, 0, 0.6)`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.1, 0.3, 0.1],
+            opacity: [0.3, 0.8, 0.3],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 6 + i,
+            duration: 3 + Math.random() * 4,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.5,
+            delay: Math.random() * 5,
           }}
         />
       ))}
 
-      {/* Clean corner accents */}
+      {/* Twinkling stars */}
+      {Array.from({ length: 50 }, (_, i) => (
+        <motion.div
+          key={`star-${i}`}
+          className="absolute w-1 h-1 bg-white rounded-full"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0.2, 1, 0.2],
+            scale: [1, 1.5, 1],
+          }}
+          transition={{
+            duration: 2 + Math.random() * 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: Math.random() * 5,
+          }}
+        />
+      ))}
+
+      {/* Shooting stars */}
+      {Array.from({ length: 8 }, (_, i) => (
+        <motion.div
+          key={`shooting-${i}`}
+          className="absolute h-0.5 bg-gradient-to-r from-transparent via-white to-transparent"
+          style={{
+            width: "100px",
+            left: "-100px",
+            top: `${Math.random() * 80}%`,
+            transformOrigin: "left center",
+            rotate: "-45deg",
+          }}
+          animate={{
+            x: ["0vw", "120vw"],
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "linear",
+            delay: i * 3 + Math.random() * 2,
+            repeatDelay: 5 + Math.random() * 10,
+          }}
+        />
+      ))}
+
+      {/* Galaxy explosion nebula clouds */}
       <motion.div
-        className="absolute top-0 right-0 w-64 h-64"
+        className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at top right, rgba(59, 130, 246, 0.05) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 30%, transparent 70%)",
+          filter: "blur(80px)",
         }}
         animate={{
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.3, 1],
+          opacity: [0.4, 0.7, 0.4],
+          rotate: [0, 180, 360],
         }}
         transition={{
-          duration: 6,
+          duration: 20,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
       <motion.div
-        className="absolute bottom-0 left-0 w-64 h-64"
+        className="absolute bottom-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at bottom left, rgba(147, 51, 234, 0.05) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(147, 51, 234, 0.2) 30%, transparent 70%)",
+          filter: "blur(80px)",
         }}
         animate={{
-          opacity: [0.3, 0.5, 0.3],
+          scale: [1, 1.4, 1],
+          opacity: [0.3, 0.6, 0.3],
+          rotate: [360, 180, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 25,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 1,
         }}
       />
+
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full -translate-x-1/2 -translate-y-1/2"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(16, 185, 129, 0.2) 30%, transparent 70%)",
+          filter: "blur(70px)",
+        }}
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.3, 0.6, 0.3],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Explosion particles */}
+      {Array.from({ length: 20 }, (_, i) => {
+        const angle = (i * 360) / 20;
+        const distance = 200 + Math.random() * 100;
+        return (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-2 h-2 rounded-full"
+            style={{
+              left: "50%",
+              top: "50%",
+              background: `rgba(${Math.random() > 0.5 ? "139, 92, 246" : "59, 130, 246"}, 0.8)`,
+              boxShadow: `0 0 10px rgba(${Math.random() > 0.5 ? "139, 92, 246" : "59, 130, 246"}, 0.8)`,
+            }}
+            animate={{
+              x: [0, Math.cos((angle * Math.PI) / 180) * distance],
+              y: [0, Math.sin((angle * Math.PI) / 180) * distance],
+              opacity: [1, 0],
+              scale: [1, 0.5],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              ease: "easeOut",
+              delay: Math.random() * 5,
+              repeatDelay: 5 + Math.random() * 5,
+            }}
+          />
+        );
+      })}
+
+      {/* Cosmic dust overlay */}
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(ellipse at top, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                            radial-gradient(ellipse at bottom, rgba(59, 130, 246, 0.1) 0%, transparent 50%)`,
+        }}
+      />
+
+      {/* Distant galaxies (small spiral effects) */}
+      {Array.from({ length: 5 }, (_, i) => (
+        <motion.div
+          key={`galaxy-${i}`}
+          className="absolute w-20 h-20 rounded-full"
+          style={{
+            left: `${20 + i * 20}%`,
+            top: `${10 + (i % 3) * 30}%`,
+            background:
+              "radial-gradient(circle, rgba(147, 51, 234, 0.4) 0%, rgba(59, 130, 246, 0.2) 30%, transparent 70%)",
+            filter: "blur(20px)",
+          }}
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 10 + i * 2,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      ))}
     </div>
   );
 }

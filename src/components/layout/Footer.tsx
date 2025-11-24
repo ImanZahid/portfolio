@@ -5,10 +5,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-gray-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-md">
+    <footer className="border-t border-slate-800 bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-slate-950/90 shadow-lg shadow-purple-500/10">
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-w-5xl mx-auto">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-400">
             © {currentYear} Iman Zahid. All rights reserved.
           </p>
 

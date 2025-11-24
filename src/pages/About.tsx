@@ -43,14 +43,14 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl font-bold mb-8">About Me</h1>
+        <h1 className="text-4xl font-bold mb-8 text-white">About Me</h1>
 
         <div className="space-y-8">
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle>Background</CardTitle>
+              <CardTitle className="text-white">Background</CardTitle>
             </CardHeader>
-            <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
+            <CardContent className="prose prose-neutral prose-invert max-w-none">
               <p>
                 I'm a Software Engineer with a passion for building modern,
                 performant web applications. With a Computer Science degree from
@@ -74,7 +74,7 @@ export default function About() {
           </Card>
 
           <div>
-            <h2 className="text-2xl font-bold mb-6">What I Value</h2>
+            <h2 className="text-2xl font-bold mb-6 text-white">What I Value</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {values.map((value, index) => {
                 const Icon = value.icon;
@@ -85,13 +85,13 @@ export default function About() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                   >
-                    <Card className="h-full">
+                    <Card className="h-full bg-slate-900/50 border-slate-700 backdrop-blur">
                       <CardHeader>
-                        <Icon className="h-8 w-8 mb-2 text-primary" />
-                        <CardTitle className="text-xl">{value.title}</CardTitle>
+                        <Icon className="h-8 w-8 mb-2 text-purple-400" />
+                        <CardTitle className="text-xl text-white">{value.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <CardDescription>{value.description}</CardDescription>
+                        <CardDescription className="text-gray-400">{value.description}</CardDescription>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -100,11 +100,11 @@ export default function About() {
             </div>
           </div>
 
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle>Philosophy</CardTitle>
+              <CardTitle className="text-white">Philosophy</CardTitle>
             </CardHeader>
-            <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
+            <CardContent className="prose prose-neutral prose-invert max-w-none">
               <p>
                 I believe that great software is built on three pillars:{" "}
                 <strong>clean code</strong>, <strong>user empathy</strong>, and{" "}

@@ -27,7 +27,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="border-b border-gray-300 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50 shadow-md">
+      <nav className="border-b border-slate-800 bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-slate-950/90 sticky top-0 z-50 shadow-lg shadow-purple-500/10">
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
@@ -46,7 +46,7 @@ export default function Navigation() {
                 />
               </div>
               <Link to="/">
-                <span className="font-bold text-xl">IZ</span>
+                <span className="font-bold text-xl text-white">IZ</span>
               </Link>
             </div>
 
@@ -57,10 +57,10 @@ export default function Navigation() {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    'text-sm font-medium transition-colors hover:text-primary',
+                    'text-sm font-medium transition-colors hover:text-purple-400',
                     isActive(link.href)
-                      ? 'text-foreground'
-                      : 'text-muted-foreground'
+                      ? 'text-white'
+                      : 'text-gray-400'
                   )}
                 >
                   {link.label}
@@ -96,8 +96,8 @@ export default function Navigation() {
                   className={cn(
                     'block px-4 py-2 text-sm font-medium rounded-md transition-colors',
                     isActive(link.href)
-                      ? 'bg-accent text-accent-foreground'
-                      : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
+                      ? 'bg-purple-500/20 text-white'
+                      : 'text-gray-400 hover:bg-purple-500/10 hover:text-purple-400'
                   )}
                 >
                   {link.label}
@@ -117,7 +117,7 @@ export default function Navigation() {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/20"
+            className="absolute top-4 right-4 text-white hover:bg-white/10"
             onClick={() => setShowProfileImage(false)}
           >
             <X className="h-6 w-6" />

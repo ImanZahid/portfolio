@@ -30,7 +30,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-white"
           >
             Iman Zahid
           </motion.h1>
@@ -39,7 +39,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground"
+            className="text-lg md:text-xl text-purple-300"
           >
             Software Engineer
           </motion.p>
@@ -48,7 +48,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-base text-muted-foreground max-w-2xl mx-auto pt-1"
+            className="text-base text-gray-300 max-w-2xl mx-auto pt-1"
           >
             Building scalable, secure, and performant web applications with
             modern technologies. Specialized in React ecosystems, state
@@ -64,7 +64,7 @@ export default function Home() {
             <Button size="lg" asChild>
               <a href="/resume">View Resume</a>
             </Button>
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="outline" className="border-purple-500/50 bg-slate-900/50 text-purple-200 hover:bg-slate-800/80 hover:text-white hover:border-purple-400/70 transition-all" asChild>
               <a href="/projects">Explore Projects</a>
             </Button>
           </motion.div>
@@ -108,7 +108,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="pt-6"
           >
-            <p className="text-xs text-muted-foreground mb-2">Tech Stack</p>
+            <p className="text-xs text-gray-400 mb-2">Tech Stack</p>
             <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
               {techStack.map((tech, index) => (
                 <motion.div
@@ -117,7 +117,7 @@ export default function Home() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.7 + index * 0.05 }}
                 >
-                  <Badge variant="secondary">{tech}</Badge>
+                  <Badge variant="secondary" className="bg-purple-500/10 text-purple-300 border-purple-500/30 hover:bg-purple-500/20 hover:text-purple-200 transition-colors">{tech}</Badge>
                 </motion.div>
               ))}
             </div>

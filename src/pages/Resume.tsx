@@ -60,8 +60,8 @@ export default function Resume() {
       >
         <div className="mb-8 flex justify-between items-start">
           <div>
-            <h1 className="text-4xl font-bold mb-4">Resume</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-4xl font-bold mb-4 text-white">Resume</h1>
+            <p className="text-gray-300">
               Software Engineer specializing in React ecosystems and scalable
               architectures
             </p>
@@ -76,49 +76,49 @@ export default function Resume() {
 
         <div className="space-y-8">
           {/* Education */}
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <GraduationCap className="h-5 w-5" />
+              <CardTitle className="flex items-center gap-2 text-white">
+                <GraduationCap className="h-5 w-5 text-purple-400" />
                 Education
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div>
-                <h3 className="font-semibold">Bilkent University</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="font-semibold text-white">Bilkent University</h3>
+                <p className="text-sm text-gray-400">
                   Bachelor of Science in Computer Science
                 </p>
-                <p className="text-sm text-muted-foreground">Ankara, Turkey</p>
+                <p className="text-sm text-gray-400">Ankara, Turkey</p>
               </div>
             </CardContent>
           </Card>
 
           {/* Experience */}
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Briefcase className="h-5 w-5" />
+              <CardTitle className="flex items-center gap-2 text-white">
+                <Briefcase className="h-5 w-5 text-purple-400" />
                 Experience
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {experience.map((job, index) => (
                 <div key={index}>
-                  {index > 0 && <Separator className="my-6" />}
+                  {index > 0 && <Separator className="my-6 bg-slate-700" />}
                   <div>
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <h3 className="font-semibold">{job.position}</h3>
-                        <p className="text-sm text-muted-foreground">
+                        <h3 className="font-semibold text-white">{job.position}</h3>
+                        <p className="text-sm text-gray-400">
                           {job.company}
                         </p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-gray-400">
                         {job.period}
                       </p>
                     </div>
-                    <p className="text-sm">{job.description}</p>
+                    <p className="text-sm text-gray-300">{job.description}</p>
                   </div>
                 </div>
               ))}
@@ -126,18 +126,18 @@ export default function Resume() {
           </Card>
 
           {/* Skills */}
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Award className="h-5 w-5" />
+              <CardTitle className="flex items-center gap-2 text-white">
+                <Award className="h-5 w-5 text-purple-400" />
                 Skills & Technologies
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {Object.entries(skills).map(([category, techs]) => (
                 <div key={category}>
-                  <h3 className="font-semibold mb-2">{category}</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-semibold mb-2 text-white">{category}</h3>
+                  <p className="text-sm text-gray-300">
                     {techs.join(" • ")}
                   </p>
                 </div>
@@ -146,15 +146,15 @@ export default function Resume() {
           </Card>
 
           {/* PDF Embed */}
-          <Card>
+          <Card className="bg-slate-900/50 border-slate-700 backdrop-blur">
             <CardHeader>
-              <CardTitle>Full Resume (PDF)</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-white">Full Resume (PDF)</CardTitle>
+              <CardDescription className="text-gray-400">
                 View or download the complete PDF version
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="aspect-[8.5/11] border rounded-lg overflow-hidden bg-muted">
+              <div className="aspect-[8.5/11] border border-slate-700 rounded-lg overflow-hidden bg-slate-800">
                 <iframe
                   src={resumePdf}
                   className="w-full h-full"
