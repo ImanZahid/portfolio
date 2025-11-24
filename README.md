@@ -257,13 +257,6 @@ The blog supports:
 - Wait for rate limit to reset (1 hour)
 - Add a GitHub Personal Access Token (see above)
 
-### Images Not Loading
-**Cause**: Images not in correct directory
-
-**Solution**:
-- Ensure images are in `public/assets/` or `public/blog/`
-- Use paths like `/assets/image.png` (not `./assets/`)
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
