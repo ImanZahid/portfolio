@@ -1,34 +1,101 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import Layout from './components/layout/Layout';
+
+// Lazy load pages for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Resume = lazy(() => import('./pages/Resume'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Loading component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+        <p className="text-muted-foreground">Loading...</p>
+      </div>
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="projects"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Projects />
+              </Suspense>
+            }
+          />
+          <Route
+            path="resume"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Resume />
+              </Suspense>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <About />
+              </Suspense>
+            }
+          />
+          <Route
+            path="contact"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="blog"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <Blog />
+              </Suspense>
+            }
+          />
+          <Route
+            path="blog/:id"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <BlogPost />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                <NotFound />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

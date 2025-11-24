@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\BilkentFYP1.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\BilkentFYP1.png\" /Y)",
+      "Bash(copy:*)",
+      "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\BilkentAwards1.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\BilkentAwards1.png\" /Y)",
+      "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\ArksoftBilkent.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\ArksoftBilkent.png\" /Y)",
+      "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\ArksoftBilkent1.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\ArksoftBilkent1.png\" /Y)"
     ],
     "deny": [],
     "ask": []

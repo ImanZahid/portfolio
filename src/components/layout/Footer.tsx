@@ -1,0 +1,46 @@
+import { Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="border-t bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Iman Zahid. All rights reserved.
+          </p>
+
+          <div className="flex gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://github.com/ImanZahid"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a
+                href="https://www.linkedin.com/in/iman-zahid"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="mailto:iman.zahid@example.com" aria-label="Email">
+                <Mail className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
