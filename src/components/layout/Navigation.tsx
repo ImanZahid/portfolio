@@ -27,7 +27,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="border-b border-slate-800 bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-slate-950/90 sticky top-0 z-50 shadow-lg shadow-purple-500/10">
+      <nav className="border-b border-slate-700/50 bg-slate-900/30 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-900/20 sticky top-0 z-50 shadow-lg shadow-purple-500/10">
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
