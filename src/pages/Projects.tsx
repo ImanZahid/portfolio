@@ -26,52 +26,90 @@ export default function Projects() {
   const [direction, setDirection] = useState(0);
 
   useEffect(() => {
-    const fetchReposWithReadme = async () => {
-      try {
-        console.log('Fetching repos from GitHub...');
-        const response = await fetch('https://api.github.com/users/ImanZahid/repos?sort=updated&per_page=100');
+    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-        if (!response.ok) {
-          console.error('GitHub API error:', response.status, response.statusText);
-          const errorData = await response.json();
-          console.error('Error details:', errorData);
+    const fetchFromGitHub = async (): Promise<GitHubRepo[]> => {
+      console.log('Fetching fresh data from GitHub API...');
+      const response = await fetch('https://api.github.com/users/ImanZahid/repos?sort=updated&per_page=100');
+
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Fetch README for each repo
+      const reposWithReadme = await Promise.all(
+        data.map(async (repo: GitHubRepo) => {
+          try {
+            const readmeResponse = await fetch(`https://api.github.com/repos/ImanZahid/${repo.name}/readme`, {
+              headers: { Accept: 'application/vnd.github.v3.raw' }
+            });
+            if (readmeResponse.ok) {
+              const readme = await readmeResponse.text();
+              const shortReadme = readme.slice(0, 200).trim() + (readme.length > 200 ? '...' : '');
+              return { ...repo, readme: shortReadme };
+            }
+          } catch {
+            // No README available
+          }
+          return repo;
+        })
+      );
+
+      // Cache in localStorage
+      localStorage.setItem('github_repos', JSON.stringify({
+        fetchedAt: new Date().toISOString(),
+        repos: reposWithReadme
+      }));
+
+      return reposWithReadme;
+    };
+
+    const loadRepos = async () => {
+      try {
+        // 1. Check localStorage cache first
+        const cached = localStorage.getItem('github_repos');
+        if (cached) {
+          const { fetchedAt, repos: cachedRepos } = JSON.parse(cached);
+          const cacheAge = Date.now() - new Date(fetchedAt).getTime();
+
+          if (cacheAge < CACHE_DURATION) {
+            console.log('Using localStorage cache');
+            setRepos(cachedRepos);
+            setLoading(false);
+            return;
+          }
+        }
+
+        // 2. Try static JSON file (built at deploy time)
+        const staticResponse = await fetch('/data/repos.json');
+        if (staticResponse.ok) {
+          const { fetchedAt, repos: staticRepos } = await staticResponse.json();
+          const cacheAge = Date.now() - new Date(fetchedAt).getTime();
+
+          console.log('Using static cache from build');
+          setRepos(staticRepos);
           setLoading(false);
+
+          // If static cache is old, refresh in background
+          if (cacheAge > CACHE_DURATION) {
+            fetchFromGitHub().then(setRepos).catch(console.error);
+          }
           return;
         }
 
-        const data = await response.json();
-        console.log(`Fetched ${data.length} repositories`);
-
-        // Fetch README for each repo
-        const reposWithReadme = await Promise.all(
-          data.map(async (repo: GitHubRepo) => {
-            try {
-              const readmeResponse = await fetch(`https://api.github.com/repos/ImanZahid/${repo.name}/readme`, {
-                headers: { Accept: 'application/vnd.github.v3.raw' }
-              });
-              if (readmeResponse.ok) {
-                const readme = await readmeResponse.text();
-                // Get first 200 characters
-                const shortReadme = readme.slice(0, 200).trim() + (readme.length > 200 ? '...' : '');
-                return { ...repo, readme: shortReadme };
-              }
-            } catch (err) {
-              console.log(`No README for ${repo.name}`);
-            }
-            return repo;
-          })
-        );
-
-        console.log('Setting repos:', reposWithReadme.length);
-        setRepos(reposWithReadme);
+        // 3. Fallback to live API
+        const freshRepos = await fetchFromGitHub();
+        setRepos(freshRepos);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching repos:', err);
+        console.error('Error loading repos:', err);
         setLoading(false);
       }
     };
 
-    fetchReposWithReadme();
+    loadRepos();
   }, []);
 
   const sortedRepos = useMemo(() => {

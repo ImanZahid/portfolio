@@ -8,7 +8,8 @@
       "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\BilkentAwards1.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\BilkentAwards1.png\" /Y)",
       "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\ArksoftBilkent.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\ArksoftBilkent.png\" /Y)",
       "Bash(copy \"c:\\Users\\iman.zahid\\portfolio\\src\\assets\\ArksoftBilkent1.png\" \"c:\\Users\\iman.zahid\\portfolio\\public\\blog\\ArksoftBilkent1.png\" /Y)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(npm run fetch-repos:*)"
     ],
     "deny": [],
     "ask": []

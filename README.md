@@ -40,7 +40,10 @@ A modern, interactive portfolio website showcasing my software engineering proje
 portfolio/
 ├── public/
 │   ├── assets/          # Images, resume PDF, and static assets
-│   └── blog/            # Blog post images
+│   ├── blog/            # Blog post images
+│   └── data/            # Cached GitHub repos (auto-generated)
+├── scripts/
+│   └── fetch-github-repos.js  # Build-time GitHub data fetcher
 ├── src/
 │   ├── components/
 │   │   ├── ui/          # Reusable UI components (shadcn/ui)
@@ -59,7 +62,6 @@ portfolio/
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
-├── .env.example         # Environment variables template
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.js
@@ -83,15 +85,12 @@ cd portfolio
 npm install
 ```
 
-### Environment Variables
-Create a `.env` file in the root directory:
-
-```env
-# Optional: GitHub Personal Access Token for higher API rate limits
-VITE_GITHUB_TOKEN=your_github_token_here
+### Fetch GitHub Projects Cache
+```bash
+npm run fetch-repos
 ```
 
-**Note**: Without a token, you'll be limited to 60 API requests per hour. With a token, you get 5,000 requests per hour.
+This fetches your GitHub repositories and caches them to `public/data/repos.json`. This runs automatically during build, but you can run it manually to update the cache.
 
 ### Run Development Server
 ```bash
@@ -193,30 +192,28 @@ theme: {
    ```
 3. Run: `npm run deploy`
 
-## 📝 GitHub API Rate Limiting
+## 📝 GitHub API Caching
 
-### Issue
-The GitHub API has rate limits:
-- **Without authentication**: 60 requests/hour
-- **With authentication**: 5,000 requests/hour
+### How It Works
+The portfolio uses a 3-tier caching system to minimize GitHub API calls:
 
-### Solution
-Add a GitHub Personal Access Token:
+1. **localStorage** (browser) - Checked first, valid for 24 hours per visitor
+2. **Static JSON** (`public/data/repos.json`) - Built at deploy time, serves as fallback
+3. **Live GitHub API** - Only called when both caches are missing or expired
 
-1. Go to GitHub Settings → Developer settings → Personal access tokens
-2. Generate new token (classic)
-3. Select scopes: `public_repo`
-4. Copy the token
-5. Add to `.env` file: `VITE_GITHUB_TOKEN=your_token`
-6. Update the fetch call in `Projects.tsx`:
+### Benefits
+- **Zero API calls** for most visitors (uses static cache from build)
+- **1 API call per 24h** per returning visitor (localStorage refresh)
+- **Build time** is when API quota is used (once per deploy)
 
-```typescript
-const response = await fetch('https://api.github.com/users/ImanZahid/repos?sort=updated&per_page=100', {
-  headers: {
-    Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-  },
-});
+### Manual Cache Refresh
+To manually update the cached projects:
+
+```bash
+npm run fetch-repos
 ```
+
+This is automatically run during `npm run build`.
 
 ## 🎯 Key Features Explained
 
@@ -251,11 +248,11 @@ The blog supports:
 ## 🐛 Known Issues & Solutions
 
 ### No Projects Showing
-**Cause**: GitHub API rate limit exceeded
+**Cause**: GitHub API rate limit exceeded or cache not generated
 
 **Solution**:
-- Wait for rate limit to reset (1 hour)
-- Add a GitHub Personal Access Token (see above)
+- Run `npm run fetch-repos` to generate the static cache
+- The cache will be automatically used on next page load
 
 ## 📄 License
 

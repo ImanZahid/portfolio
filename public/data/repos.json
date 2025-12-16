@@ -1,0 +1,358 @@
+{
+  "fetchedAt": "2025-12-16T13:42:29.966Z",
+  "repos": [
+    {
+      "id": 1103067989,
+      "name": "portfolio",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/portfolio",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "TypeScript",
+      "updated_at": "2025-11-24T15:42:17Z",
+      "readme": "# Iman Zahid - Portfolio Website\n\nA modern, interactive portfolio website showcasing my software engineering projects, achievements, and professional experience. Built with React, TypeScript, and Tail..."
+    },
+    {
+      "id": 1058753724,
+      "name": "CyberpunkHackingPuzzle",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/CyberpunkHackingPuzzle",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "TypeScript",
+      "updated_at": "2025-09-19T14:29:44Z",
+      "readme": "# React + TypeScript + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\n\nCurrently, two official plugins are available:\n\n- [@vitejs/plugin-reac..."
+    },
+    {
+      "id": 1054721767,
+      "name": "canvas-nodes",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/canvas-nodes",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "TypeScript",
+      "updated_at": "2025-09-11T13:46:06Z",
+      "readme": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).\n\n## Getting Started\n\nFirst, run the development se..."
+    },
+    {
+      "id": 1046163507,
+      "name": "gmail-purge",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/gmail-purge",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "Python",
+      "updated_at": "2025-08-28T09:35:44Z",
+      "readme": "# Gmail Purge Script\r\n\r\nBulk-manage Gmail using the Gmail API. Safely move messages to Trash (reversible for ~30 days) or permanently delete them. Supports Gmail search queries (`older_than:1y`, `in:t..."
+    },
+    {
+      "id": 1023741083,
+      "name": "Simple-Book-API",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/Simple-Book-API",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "JavaScript",
+      "updated_at": "2025-07-21T16:11:39Z"
+    },
+    {
+      "id": 973647580,
+      "name": "storm_sca",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/storm_sca",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "TypeScript",
+      "updated_at": "2025-05-22T14:13:27Z",
+      "readme": "# React + TypeScript + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\n\nCurrently, two official plugins are available:\n\n- [@vitejs/plugin-reac..."
+    },
+    {
+      "id": 935540588,
+      "name": "ecommerce_flutter_app",
+      "description": "🛍️ A cross-platform e-commerce application built with Flutter, supporting Android, iOS, and Web.",
+      "html_url": "https://github.com/ImanZahid/ecommerce_flutter_app",
+      "stargazers_count": 0,
+      "forks_count": 1,
+      "topics": [],
+      "language": "Dart",
+      "updated_at": "2025-05-16T09:33:34Z",
+      "readme": "# 🛍️ Ecommerce Flutter App\n\nA modern **cross-platform shopping application** built using [Flutter](https://flutter.dev/). Supports **Android**, **iOS**, and **Web** with a smooth and responsive shopp..."
+    },
+    {
+      "id": 972044964,
+      "name": "signify-plus",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/signify-plus",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": null,
+      "updated_at": "2025-04-24T13:01:21Z",
+      "readme": "# SignifyPlus Backend\n\n## Overview\nSignifyPlus Backend is built using **Node.js** and **Express.js**, with **MongoDB** as the database. The application includes WebSocket management and routing for us..."
+    },
+    {
+      "id": 892110469,
+      "name": "MyBlogSpace",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/MyBlogSpace",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "HTML",
+      "updated_at": "2024-12-26T19:12:41Z",
+      "readme": "# MyBlogSpace\n\nMyBlogSpace is a web application built using ASP.NET Core MVC that allows users to manage Blogs, Categories, Users, Roles, and Tags. This project demonstrates the implementation of data..."
+    },
+    {
+      "id": 589796893,
+      "name": "CTIS164-HWS",
+      "description": "Technical Mathematics with Programming",
+      "html_url": "https://github.com/ImanZahid/CTIS164-HWS",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "cplusplus"
+      ],
+      "language": "C++",
+      "updated_at": "2024-12-10T00:15:26Z",
+      "readme": "# CTIS164-HWS\n Technical Mathematics with Programming"
+    },
+    {
+      "id": 589782642,
+      "name": "WordPuzzle",
+      "description": "The game is a simple version of “Words of Wonders” mobile game. With the given letters, you will find words that exist in  the puzzle.",
+      "html_url": "https://github.com/ImanZahid/WordPuzzle",
+      "stargazers_count": 1,
+      "forks_count": 1,
+      "topics": [
+        "css",
+        "html",
+        "javascript",
+        "jquery"
+      ],
+      "language": "HTML",
+      "updated_at": "2024-11-26T12:04:59Z",
+      "readme": "# WordPuzzle\n The game is a version of “Words of Wonders” mobile game made using HTML, CSS, Javascript and jQuery. With the given letters, you will find words that exist in  the puzzle.\n\nTo further un..."
+    },
+    {
+      "id": 867589803,
+      "name": "ImanZahid_Assignemt1",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/ImanZahid_Assignemt1",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "HTML",
+      "updated_at": "2024-10-19T12:13:40Z"
+    },
+    {
+      "id": 589005441,
+      "name": "GardenOfEden",
+      "description": "🌼 🌹 Java Flower Shop with Management features",
+      "html_url": "https://github.com/ImanZahid/GardenOfEden",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "flowershop",
+        "java",
+        "java-gui",
+        "mysql"
+      ],
+      "language": "Java",
+      "updated_at": "2024-09-21T12:45:27Z",
+      "readme": "# Garden of Eden\n:blossom: :rose: Garden of Eden is a flower shop app with some management features.\nGarden of Eden was built using Java and MySQL\n\n * Users can purchase flowers and flower jewelry\n *..."
+    },
+    {
+      "id": 827183685,
+      "name": "EmployeeInfoApp",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/EmployeeInfoApp",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "TypeScript",
+      "updated_at": "2024-07-17T12:26:16Z",
+      "readme": "# EmployeeInfoApp\n\n\n## Project Overview\n\n### Technologies Used\n- **Angular**\n- **PrimeNG** (for styling)\n- **JSON-Server** (as a mock database)\n\n### Pages\n\n#### Page 1: Welcome Page\n- **Route:** `/Wel..."
+    },
+    {
+      "id": 723334330,
+      "name": "viva-rituals",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/viva-rituals",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "Kotlin",
+      "updated_at": "2024-01-30T06:29:59Z",
+      "readme": "# kotlin-android-template 🤖\n\n[![Use this template](https://img.shields.io/badge/from-kotlin--android--template-brightgreen?logo=dropbox)](https://github.com/cortinico/kotlin-android-template/generate..."
+    },
+    {
+      "id": 733161290,
+      "name": "tech-test",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/tech-test",
+      "stargazers_count": 1,
+      "forks_count": 1,
+      "topics": [],
+      "language": "JavaScript",
+      "updated_at": "2023-12-19T06:54:58Z",
+      "readme": "# Getting Started with Create React App\n\nThis project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\n\n## Available Scripts\n\nIn the project directory, you can r..."
+    },
+    {
+      "id": 670674088,
+      "name": "JavaUI",
+      "description": " Dive into the world of UI best practices with JavaFX and JavaSwing. This repository highlights essential design principles, accessibility considerations, and optimization techniques to deliver top-notch desktop applications.",
+      "html_url": "https://github.com/ImanZahid/JavaUI",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "Java",
+      "updated_at": "2023-07-25T15:23:39Z",
+      "readme": "# JavaUI\nThis repository highlights essential design principles, accessibility considerations, and optimization techniques to deliver top-notch desktop applications."
+    },
+    {
+      "id": 600531968,
+      "name": "MovieLand",
+      "description": "React.js Application",
+      "html_url": "https://github.com/ImanZahid/MovieLand",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "es6",
+        "javascript",
+        "npm",
+        "react",
+        "reactjs"
+      ],
+      "language": "CSS",
+      "updated_at": "2023-06-11T18:16:28Z",
+      "readme": "# MovieLand\n React.js Application\n\n## Available Scripts\n\nIn the project directory, you can run:\n\n### `npm start`\n\n\n\nRuns the app in the development mode.\\\nOpen [http://localhost:3000](http://localhost..."
+    },
+    {
+      "id": 612917901,
+      "name": "React.jsCalculator",
+      "description": null,
+      "html_url": "https://github.com/ImanZahid/React.jsCalculator",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "language": "JavaScript",
+      "updated_at": "2023-03-12T11:39:11Z"
+    },
+    {
+      "id": 597450532,
+      "name": "PythonProject",
+      "description": " A website with a blog and contact page using Python, Streamlit and other open-source tools.",
+      "html_url": "https://github.com/ImanZahid/PythonProject",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "python",
+        "python3",
+        "streamlit",
+        "streamlit-webapp"
+      ],
+      "language": "Python",
+      "updated_at": "2023-02-04T15:42:14Z",
+      "readme": "# PythonProject\n  A website with a blog and contact page using Python, Streamlit and other open-source tools.\n\n\n#screenshot\n\n![2023-02-04 (2)](https://user-images.githubusercontent.com/97961673/216776..."
+    },
+    {
+      "id": 590663333,
+      "name": "jQuery-Projects",
+      "description": "All of the projects are implemented using html,css,javascript and jQuery",
+      "html_url": "https://github.com/ImanZahid/jQuery-Projects",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "css",
+        "html",
+        "jquery"
+      ],
+      "language": "HTML",
+      "updated_at": "2023-01-19T13:08:01Z",
+      "readme": "# jQueryprojects\n All of the projects are implemented using html,css,javascript and jQuery\n \n #screenshots\n \n --project1--\n \n A shopping cart html application that allows users to increase/decrease/re..."
+    },
+    {
+      "id": 590162541,
+      "name": "Front-End-Projects",
+      "description": "All of the projects are implemented using html,css and javascript.",
+      "html_url": "https://github.com/ImanZahid/Front-End-Projects",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "css",
+        "html",
+        "javascript"
+      ],
+      "language": "HTML",
+      "updated_at": "2023-01-17T19:42:42Z",
+      "readme": "# Front-End-Projects\n All of the projects are implemented using html,css and javascript.\n\n#screenshots\n\n--Project1--\n\n![2023-01-17 (5)](https://user-images.githubusercontent.com/97961673/212996752-832..."
+    },
+    {
+      "id": 590154445,
+      "name": "Calculator",
+      "description": "A functional and responsive calculator build using html,css and javascript.",
+      "html_url": "https://github.com/ImanZahid/Calculator",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "css",
+        "html",
+        "javascript"
+      ],
+      "language": "JavaScript",
+      "updated_at": "2023-01-17T19:27:38Z",
+      "readme": "# Calculator\n A functional and responsive calculator build using html,css and javascript.\n \n #screenshots\n \n![2023-01-15 (2)](https://user-images.githubusercontent.com/97961673/212992720-601b301b-b43b..."
+    },
+    {
+      "id": 589788805,
+      "name": "Webpages",
+      "description": "Responsive webpages implemented using HTML and CSS",
+      "html_url": "https://github.com/ImanZahid/Webpages",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "css",
+        "html"
+      ],
+      "language": "CSS",
+      "updated_at": "2023-01-17T18:53:01Z",
+      "readme": "# Webpage\n Responsive webpages implemented using HTML and CSS\n\n#screenshots\n\n#Webpage1\n\n--Desktop Version--\n\n![2023-01-15 (21)](https://user-images.githubusercontent.com/97961673/212781922-9380e3b9-ef..."
+    },
+    {
+      "id": 589791551,
+      "name": "CTIS261-Project",
+      "description": "Fundamentals of Computer Networks",
+      "html_url": "https://github.com/ImanZahid/CTIS261-Project",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "computer-networks"
+      ],
+      "language": null,
+      "updated_at": "2023-01-17T00:33:58Z",
+      "readme": "# CTIS261-Project\n Fundamentals of Computer Networks\n \n #screenshot\n \n![2023-01-15 (13)](https://user-images.githubusercontent.com/97961673/212782835-0335d288-e9dd-472d-b367-0385e3dafb27.png)"
+    },
+    {
+      "id": 589794762,
+      "name": "PeopleDataset",
+      "description": "A javascript program that imports the array “people” from “db.js” file, and displays people  data in an html table",
+      "html_url": "https://github.com/ImanZahid/PeopleDataset",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [
+        "css",
+        "html",
+        "javascript"
+      ],
+      "language": "HTML",
+      "updated_at": "2023-01-17T00:28:43Z",
+      "readme": "# PeopleDataset\n A javascript program that imports the array “people” from “db.js” file, and displays people  data in an html table\n \n #screenshot\n \n![2023-01-17 (1)](https://user-images.githubusercon..."
+    }
+  ]
+}
