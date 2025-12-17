@@ -18,12 +18,36 @@ interface GitHubRepo {
   readme?: string;
 }
 
+// Hook to get responsive cards per page
+function useCardsPerPage() {
+  const [cardsPerPage, setCardsPerPage] = useState(3);
+
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      if (window.innerWidth < 640) {
+        setCardsPerPage(1); // Mobile: 1 card
+      } else if (window.innerWidth < 1024) {
+        setCardsPerPage(2); // Tablet: 2 cards
+      } else {
+        setCardsPerPage(3); // Desktop: 3 cards
+      }
+    };
+
+    updateCardsPerPage();
+    window.addEventListener('resize', updateCardsPerPage);
+    return () => window.removeEventListener('resize', updateCardsPerPage);
+  }, []);
+
+  return cardsPerPage;
+}
+
 export default function Projects() {
   const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState<'updated' | 'stars'>('updated');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const cardsPerPage = useCardsPerPage();
 
   useEffect(() => {
     const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
@@ -121,8 +145,7 @@ export default function Projects() {
     });
   }, [repos, sortBy]);
 
-  const CARDS_PER_PAGE = 3;
-  const totalPages = Math.ceil(sortedRepos.length / CARDS_PER_PAGE);
+  const totalPages = Math.ceil(sortedRepos.length / cardsPerPage);
 
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
@@ -135,8 +158,8 @@ export default function Projects() {
   };
 
   const getCurrentPageRepos = () => {
-    const startIndex = currentIndex * CARDS_PER_PAGE;
-    return sortedRepos.slice(startIndex, startIndex + CARDS_PER_PAGE);
+    const startIndex = currentIndex * cardsPerPage;
+    return sortedRepos.slice(startIndex, startIndex + cardsPerPage);
   };
 
   const swipeConfidenceThreshold = 10000;
@@ -262,7 +285,7 @@ export default function Projects() {
                       paginate(-1);
                     }
                   }}
-                  className="absolute w-full cursor-grab active:cursor-grabbing grid grid-cols-1 md:grid-cols-3 gap-4"
+                  className="absolute w-full cursor-grab active:cursor-grabbing grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                 >
                   {currentPageRepos.map((repo) => (
                     <Card key={repo.id} className="bg-slate-900/50 border-slate-700 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all backdrop-blur flex flex-col">
