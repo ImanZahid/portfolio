@@ -235,7 +235,7 @@ export default function BlogPost() {
       <div className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-4xl font-bold mb-4 text-white">Post Not Found</h1>
         <Link to="/blog">
-          <Button>
+          <Button className="cursor-pointer">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
           </Button>
@@ -252,7 +252,7 @@ export default function BlogPost() {
         transition={{ duration: 0.5 }}
       >
         <Link to="/blog">
-          <Button variant="ghost" className="mb-6 text-gray-300 hover:text-white hover:bg-purple-500/10">
+          <Button variant="ghost" className="mb-6 text-gray-300 hover:text-white hover:bg-purple-500/10 cursor-pointer">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
           </Button>
